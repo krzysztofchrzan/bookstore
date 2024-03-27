@@ -27,7 +27,6 @@ public class Customer {
         properties = new Properties();
         properties.load(new FileReader("src\\main\\resources\\config.properties"));
         url = properties.getProperty("REST_API_URL") + "customer";
-        System.out.println(url);
     }
 
 
@@ -53,12 +52,13 @@ public class Customer {
         // send a request
         response = request.post(url);
         System.out.println(response.body().asString());
-        System.out.println("The status received: " + response.statusLine());
+
     }
 
     @Then("I verify that response has status {string}")
     public void verifyStatus(String status) {
         int statusInt = Integer.parseInt(status);
+        System.out.println("The status received: " + response.statusLine());
         Assert.assertEquals(response.statusCode(), statusInt);
     }
 
@@ -69,23 +69,19 @@ public class Customer {
         request.header("Content-Type", "application/json");
         request.header("CDate", "simpleDate");
 
-        // create a request body
-        JSONObject requestJSON = new JSONObject();
-        try {
-            requestJSON.put("name", "Krzysztof");
-            requestJSON.put("surname", "Chrzan");
-            requestJSON.put("age", "40");
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        }
-        request.body(requestJSON.toString());
-
-        // send a request
-        response = request.post("http://localhost:3000/customer");
-
-        // print
-        System.out.println(response.body().asString());
-        System.out.println("The status received: " + response.statusLine());
+        response = request.get(url +  "?surname=Chrzan");
+        System.out.println(response.toString());
     }
+
+    @Then("I verify that response has customer")
+    public void verifyGetResponse() {
+        String s = response.jsonPath().get("x[0].surname").toString();
+        System.out.println(s);
+//        JSONObject json = new JSONObject();
+//        json = response.toString();
+//        System.out.println("The status received: " + response.statusLine());
+//        Assert.assertEquals(response.statusCode(), statusInt);
+    }
+
 
 }
