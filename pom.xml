@@ -14,7 +14,7 @@
         <cucumber.version>7.16.1</cucumber.version>
         <selenium.version>3.141.59</selenium.version>
         <chromedriver.version>3.141.59</chromedriver.version>
-        <junit.jupiter.api>5.8.2</junit.jupiter.api>
+        <junit.jupiter.version>5.8.2</junit.jupiter.version>
     </properties>
 
 
@@ -23,7 +23,13 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.jupiter.api}</version>
+            <version>${junit.jupiter.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
         </dependency>
 
         <!--        <dependency>-->

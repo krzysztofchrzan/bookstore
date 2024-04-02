@@ -35,14 +35,13 @@ public class Customer {
         // before delete test data
         RequestSpecification requestSpecification = RestAssured.given();
         requestSpecification.header("Content-Type", "application/json");
-        Response response = requestSpecification.get(url + "?name=Krzysztof&surname=Chrzan");
-
+        Response response = requestSpecification.get(url + "?surname=Chrzan");
         JsonPath jsonPath = response.jsonPath();
         List<String> customers = jsonPath.getList("id");
         customers.forEach(c -> requestSpecification.delete(url + "/" + c));
     }
 
-    @When("I make a POST request to customer")
+    @When("I make a POST request to customer service")
     public void requestPostToCustomer(DataTable datatable) {
         dataTableExpected = datatable;
         List<Map<String, String>> lista = datatable.asMaps(String.class, String.class);
@@ -111,7 +110,6 @@ public class Customer {
     @Then("I verify that response has status {string}")
     public void verifyStatus(String statusExpected) {
         int statusExpectedInt = Integer.parseInt(statusExpected);
-        System.out.println("The status received: " + responsePost.statusLine());
         Assertions.assertEquals(statusExpectedInt, responsePost.statusCode());
     }
 }
