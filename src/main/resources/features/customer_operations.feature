@@ -25,3 +25,4 @@ Feature: Customer registration API in a bookstore
       | Hanna     | Chrzan  | 11  |
     Then I verify that response has status "201"
 
+    # TODO: create PUT scenario
