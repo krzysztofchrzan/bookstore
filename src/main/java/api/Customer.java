@@ -26,7 +26,7 @@ public class Customer {
     private Response response = null;
 
     @Before(value = "@API")
-    public void setupApi() throws IOException {
+    public void setupAPI() throws IOException {
         Properties properties = new Properties();
         properties.load(new FileReader("src\\main\\resources\\config.properties"));
         url = properties.getProperty("REST_API_URL") + "customer";
