@@ -9,59 +9,42 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PageLogin {
-    private String page_url;
     private WebDriver driver;
-    WebElement elementTitle;
+    private String pageURL = "bookstore_login_page.html";
+    private String expectedPageTitle = "Bookstore Login Page";
 
+
+    // 1. locators
+    private By title = By.tagName("title");
+    private By username = By.name("username");
+    private By password = By.name("password");
+    private By submit = By.xpath("//input[type='submit'");
+
+    // 2. constructor
     PageLogin(WebDriver driver){
         this.driver = driver;
     }
 
-//    @Given("Do something")
-//    public void doSomething(){
-//        System.out.println("cucumber works");
-//    }
-
     public String getPageUrl() {
-        return page_url;
+        return pageURL;
     }
 
-    public WebDriver getDriver() {
-        return driver;
-    }
-
-
-    public void openWebPage() {
-
-
-        elementTitle = driver.findElement(By.tagName("title"));
-        try {
-            elementTitle = driver.findElement(By.tagName("title"));
-//            WebDriverWait wait = new WebDriverWait(driver, 5);
-//            wait.until(ExpectedConditions.visibilityOf(elementTable));
-
-            //System.out.println(elementTable.getText());
-        } catch (NoSuchElementException e) {
-            System.out.println("not found element");
-        }
-
-//        List<WebElement> elementsList = driver.findElements(By.xpath("//table/tbody/tr[3]"));
-//        System.out.println(elementsList.size());
-
-        //String webPageTitle = driver.getTitle();
-        //Assertions.assertEquals();
-
-
-    }
-
+    // 3. page actions
     public boolean isPageTitleCorrect(){
-        System.out.println(elementTitle.getText());
-        return driver.getTitle().equals(elementTitle.getText());
+        //System.out.println(elementTitle.getText());
+        return driver.getTitle().equals(expectedPageTitle);
     }
 
-    //@After(value = "@GUI")
-    public void closePage() throws InterruptedException {
-        Thread.sleep(3000);
-        driver.quit();
+    public void enterUsername(){
+        driver.findElement(username).sendKeys("admin");
     }
+
+    public void enterPassword(){
+        driver.findElement(password).sendKeys("pass1");
+    }
+
+    public void clickSubmit(){
+
+    }
+
 }
