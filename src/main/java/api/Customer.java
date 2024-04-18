@@ -59,9 +59,9 @@ public class Customer {
         JSONObject requestJSON = new JSONObject();
         try {
             requestJSON
-                .put("name", name)
-                .put("surname", surname)
-                .put("age", age);
+                    .put("name", name)
+                    .put("surname", surname)
+                    .put("age", age);
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
@@ -88,9 +88,9 @@ public class Customer {
     public void verifyResponseStatus(String statusExpected) {
         int statusIntExpected = Integer.parseInt(statusExpected);
         Assertions.assertEquals(
-            statusIntExpected,
-            response.statusCode(),
-            "Should return status: " + statusIntExpected + " but it returned: " + response.statusCode()
+                statusIntExpected,
+                response.statusCode(),
+                "Should return status: " + statusIntExpected + " but it returned: " + response.statusCode()
         );
     }
 
@@ -98,9 +98,9 @@ public class Customer {
     public void i_verify_that_response_has_records(DataTable dataTable) {
         Map<String, String> map = dataTable.asMaps(String.class, String.class).get(0);
         Assertions.assertAll(
-            () -> Assertions.assertEquals(map.get("name"), response.jsonPath().get("name[0]")),
-            () -> Assertions.assertEquals(map.get("surname"), response.jsonPath().get("surname[0]")),
-            () -> Assertions.assertEquals(map.get("age"), response.jsonPath().get("age[0]"))
+                () -> Assertions.assertEquals(map.get("name"), response.jsonPath().get("name[0]")),
+                () -> Assertions.assertEquals(map.get("surname"), response.jsonPath().get("surname[0]")),
+                () -> Assertions.assertEquals(map.get("age"), response.jsonPath().get("age[0]"))
         );
     }
 
