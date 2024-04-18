@@ -3,23 +3,26 @@ package pages;
 import org.openqa.selenium.*;
 
 public class PageLogin {
-    private WebDriver driver;
-    private String pageURL = "bookstore_login_page.html";
-    private String expectedPageTitle = "Bookstore Login Page";
+    private final WebDriver driver;
+    private String expectedPageTitle = "";
 
 
     // 1. locators
-    private By username = By.name("username");
-    private By password = By.name("password");
-    private By submit = By.xpath("//input[@type=\"submit\"]");
+    private final By username = By.name("username");
+    private final By password = By.name("password");
+    private final By submit = By.xpath("//input[@type=\"submit\"]");
 
     // 2. constructor
     public PageLogin(WebDriver driver){
         this.driver = driver;
     }
 
-    public String getPageUrl() {
-        return pageURL;
+    public String getPageName() {
+        return "bookstore_login_page.html";
+    }
+
+    public void setExpectedPageTitle(String expectedPageTitle) {
+        this.expectedPageTitle = expectedPageTitle;
     }
 
     // 3. page actions

@@ -6,19 +6,15 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.PageLogin;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
 
-public class PageLoginTest {
+public class PageLoginSteps {
     private PageLogin pageLogin;
     private WebDriver driver;
     private String path;
@@ -37,11 +33,12 @@ public class PageLoginTest {
     @Given("I open a login webpage")
     public void openWebPage() {
         pageLogin = new PageLogin(driver);
-        driver.get(path + pageLogin.getPageUrl());
+        driver.get(path + pageLogin.getPageName());
     }
 
-    @Then("I check whether page title is correct")
-    public void assertPageTitle() {
+    @Then("Page title should be {string}")
+    public void assertPageTitle(String expectedPageTitle) {
+        pageLogin.setExpectedPageTitle(expectedPageTitle);
         Assertions.assertTrue(pageLogin.isPageTitleCorrect());
     }
 
