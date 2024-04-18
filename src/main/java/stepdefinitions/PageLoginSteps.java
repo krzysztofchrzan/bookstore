@@ -1,4 +1,4 @@
-package pages;
+package stepdefinitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -8,6 +8,7 @@ import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.PageLogin;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -55,7 +56,7 @@ public class PageLoginSteps {
 
     @After(value = "@GUI")
     public void tearDown() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         driver.quit();
     }
 
