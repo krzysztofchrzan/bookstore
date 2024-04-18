@@ -11,6 +11,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.PageLogin;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -39,27 +40,6 @@ public class PageLoginTest {
         driver.get(path + pageLogin.getPageUrl());
     }
 
-    public void openWebPage3() {
-        WebElement elementTitle = driver.findElement(By.tagName("title"));
-        try {
-            elementTitle = driver.findElement(By.tagName("title"));
-//            WebDriverWait wait = new WebDriverWait(driver, 5);
-//            wait.until(ExpectedConditions.visibilityOf(elementTable));
-
-            //System.out.println(elementTable.getText());
-        } catch (NoSuchElementException e) {
-            System.out.println("not found element");
-        }
-
-//        List<WebElement> elementsList = driver.findElements(By.xpath("//table/tbody/tr[3]"));
-//        System.out.println(elementsList.size());
-
-        //String webPageTitle = driver.getTitle();
-        //Assertions.assertEquals();
-
-
-    }
-
     @Then("I check whether page title is correct")
     public void assertPageTitle() {
         Assertions.assertTrue(pageLogin.isPageTitleCorrect());
@@ -67,7 +47,13 @@ public class PageLoginTest {
 
     @And("I enter username and password")
     public void enterUsernameAndPassword(){
+        pageLogin.enterUsername();
+        pageLogin.enterPassword();
+    }
 
+    @And("I click submit")
+    public void clickLogin(){
+        pageLogin.clickSubmit();
     }
 
     @After(value = "@GUI")

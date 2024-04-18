@@ -1,12 +1,6 @@
 package pages;
 
-import io.cucumber.java.Before;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Properties;
 
 public class PageLogin {
     private WebDriver driver;
@@ -15,13 +9,12 @@ public class PageLogin {
 
 
     // 1. locators
-    private By title = By.tagName("title");
     private By username = By.name("username");
     private By password = By.name("password");
-    private By submit = By.xpath("//input[type='submit'");
+    private By submit = By.xpath("//input[@type=\"submit\"]");
 
     // 2. constructor
-    PageLogin(WebDriver driver){
+    public PageLogin(WebDriver driver){
         this.driver = driver;
     }
 
@@ -31,7 +24,6 @@ public class PageLogin {
 
     // 3. page actions
     public boolean isPageTitleCorrect(){
-        //System.out.println(elementTitle.getText());
         return driver.getTitle().equals(expectedPageTitle);
     }
 
@@ -44,7 +36,7 @@ public class PageLogin {
     }
 
     public void clickSubmit(){
-
+        driver.findElement(submit).click();
     }
 
 }
