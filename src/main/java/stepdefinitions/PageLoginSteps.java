@@ -16,25 +16,24 @@ import java.util.Properties;
 
 
 public class PageLoginSteps {
+    private WebDriver webDriver;
+    private String basePath;
     private PageLogin pageLogin;
-    private WebDriver driver;
-    private String path;
-
 
 
     @Before(value = "@GUI")
     public void setupGUI() throws IOException {
         Properties properties = new Properties();
         properties.load(new FileReader("src\\main\\resources\\config.properties"));
-        path = properties.getProperty("GUI_PATH");
+        basePath = properties.getProperty("GUI_PATH");
         System.setProperty("webdriver.chrome.driver","C:\\chromedriver\\chromedriver123.exe");
-        driver = new ChromeDriver();
+        webDriver = new ChromeDriver();
     }
 
     @Given("I open a login webpage")
     public void openWebPage() {
-        pageLogin = new PageLogin(driver);
-        driver.get(path + pageLogin.getPageName());
+        pageLogin = new PageLogin(webDriver);
+        webDriver.get(basePath + pageLogin.getPageName());
     }
 
     @Then("Page title should be {string}")
@@ -56,8 +55,8 @@ public class PageLoginSteps {
 
     @After(value = "@GUI")
     public void tearDown() throws InterruptedException {
-        Thread.sleep(1000);
-        driver.quit();
+        Thread.sleep(3000);
+        webDriver.quit();
     }
 
 }
