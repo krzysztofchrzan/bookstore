@@ -2,26 +2,28 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class PageCustomerRegistration {
     private final WebDriver driver;
-    private String basePath;
 
-    private final By firstName = By.id("first-name");
+    private final By firstName = By.xpath("//form/p[1]/input");
     private final By lastName = By.id("last-name");
-    private final By email = By.id("email");
+    private final By email = By.cssSelector("input#email");
     private final By phoneNumber = By.id("phone-number");
-    private final By dateOfBirth = By.id("date-of-birth");
-    private final By genderMale = By.xpath("//p/label[text()=\"Male\"]");
-    private final By genderMale2 = By.id("gender-malex");
-    private final By genderFemale = By.id("gender-female");
+    private final By dateOfBirth = By.name("dob");
+    private final By genderMale = By.xpath("//p/label[text()=\"Male\"] | //p/input[@id=\"gender-male\"]");
+    private final By genderFemale = By.xpath("//p/label[text()=\"Female\"] | //p/input[@id=\"gender-female\"]");
     private final By addressLine = By.id("address-line");
     private final By state = By.id("state");
     private final By zipCode = By.id("zip-code");
     private final By city = By.id("city");
     private final By country = By.id("country");
     private final By occupation = By.id("occupation");
-    private final By residenceStatus = By.id("residence-status");
+    private final By occupationRole = By.cssSelector("select#occupation-role");
+
+    private final By register = By.name("register");
 
 
 
@@ -84,7 +86,13 @@ public class PageCustomerRegistration {
         driver.findElement(occupation).sendKeys(occupationValue);
     }
 
-    public void enterResidenceStatus(String residenceStatusValue) {
-        //driver.findElement(residenceStatus).sendKeys(residenceStatusValue);
+    public void enterOccupationRole(String occupationRoleValue) {
+        WebElement webElement = driver.findElement(occupationRole);//.sendKeys(occupationRoleValue);
+        Select select = new Select(webElement);
+        select.selectByVisibleText(occupationRoleValue);
+    }
+
+    public void submitRegister() {
+        driver.findElement(register).click();
     }
 }

@@ -81,11 +81,15 @@ public class PageCustomerRegistrationSteps {
     public void on_customer_registration_form_i_enter_occupation(String occupationValue) {
         pageCustomerRegistration.enterOccupation(occupationValue);
     }
-    @When("On Customer Registration Form I choose residence status {string}")
-    public void on_customer_registration_form_i_choose_residence_status(String residenceStatusValue) {
-        pageCustomerRegistration.enterResidenceStatus(residenceStatusValue);
+    @When("On Customer Registration Form I choose occupation role {string}")
+    public void on_customer_registration_form_i_choose_residence_status(String occupationRoleValue) {
+        pageCustomerRegistration.enterOccupationRole(occupationRoleValue);
     }
 
+    @When("On Customer Registration Form I click register")
+    public void on_customer_registration_form_i_choose_register() {
+        pageCustomerRegistration.submitRegister();
+    }
 
     @After(value = "@GUI2")
     public void tearDown() throws InterruptedException {

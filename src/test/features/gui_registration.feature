@@ -17,7 +17,7 @@ Feature: Bookstore webpage verification
     And On Customer Registration Form I enter last name "Chrzan"
     And On Customer Registration Form I enter email "krzysiek.chrzan@gmail.com"
     And On Customer Registration Form I enter phone number "567456321"
-    And On Customer Registration Form I enter date of birth "19810801"
+    And On Customer Registration Form I enter date of birth "23081983"
     And On Customer Registration Form I choose gender "male"
     And On Customer Registration Form I enter address "ul.Obrońców Helu 2/41"
     And On Customer Registration Form I enter state "Mazowieckie"
@@ -25,5 +25,6 @@ Feature: Bookstore webpage verification
     And On Customer Registration Form I enter city "Warszawa"
     And On Customer Registration Form I enter country "Poland"
     And On Customer Registration Form I enter occupation "Automation Tester"
-    And On Customer Registration Form I choose residence status "Rented Residence"
+    And On Customer Registration Form I choose occupation role "Employee"
+    And On Customer Registration Form I click register
 
