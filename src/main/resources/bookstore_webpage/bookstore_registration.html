@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Customer Registration Form</title>
+      <style>
+        body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+        }
+		 
+		.registration-container {
+			width: 70%;
+			margin: 0 auto;
+			margin-top: 20px;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+		}
+		 
+		form p {
+			padding-bottom: 10px;
+			position: relative;
+			left: 50px;
+		}
+
+		p label {
+		  position: relative;			
+		  left: -20px;
+		  top: 5px; /* poprawka tekstu */
+		}
+
+		.group-p-items {
+	      position: relative;
+		  left: 70px;
+		  top: 8px;
+		  margin-left: 0px;
+		  width: 30px;
+		}
+		
+		input {
+		  width: 200px;
+		  position: absolute;
+		  padding: 10px;	
+		  border: 1px solid #ccc;
+		  border-radius: 3px;
+		  left: 0px;
+		  margin-left: 150px; 
+		}
+			
+        .register input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        .register input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Style for autocomplete dropdown */
+        .autocomplete-dropdown {
+            position: relative;
+        }
+        .autocomplete-dropdown .autocomplete-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .autocomplete-dropdown .autocomplete-items {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            background-color: #fff;
+        }
+        .autocomplete-dropdown .autocomplete-item {
+            padding: 8px;
+            cursor: pointer;
+        }
+        .autocomplete-dropdown .autocomplete-item:hover {
+            background-color: #f9f9f9;
+        }		
+      </style>
+   </head>
+    <body>
+      <div class="registration-container">
+         <h2 style="text-align: center">Customer Registration Form</h2>
+         <form id="form" class="form" method="post">
+			<p><label for="first-name">First Name:</label><input type="text" id="first-name" name="first-name" value="Jan" required></p>
+            <p><label for="last-name">Last Name:</label><input type="text" id="last-name" name="last_name" value="Kowalski" required></p>			
+            <p><label for="email">Email Address:</label><input type="email" id="email" name="email" value="jan.kowalski@test.com" ></p>
+            <p><label for="phone">Phone Number:</label><input type="text" id="phone-number" name="phone" value="513999456"></p>
+			<p><label for="dob">Date of Birth:</label><input type="date" id="date-of-birth" name="dob" value="1983-08-23"></p>	
+			<p class="group-p" id="gender">
+				<label>Gender:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
+				<label class="group-p-items" for="gender-male">Male</label>
+				<input class="group-p-items" type="radio" name="gender" value="male" id="gender-male"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<label class="group-p-items" for="gender-female">Female</label>
+				<input class="group-p-items" type="radio" name="gender" value="female" id="gender-female" checked></input>
+			</p>
+            <p><label for="address-line">Address Line:</label><input type="text" id="address-line" name="address-line" value="ul.Obrońców Helu 2/41"></p>
+            <p><label for="state">State:</label><input type="text" id="state" name="state" value="Mazowieckie"></p>
+            <p><label for="zip-code">Zip Code:</label><input type="text" id="zip-code" name="zip-code" value="02-495"></p>
+            <p><label for="city">City:</label><input type="text" id="city" name="city" value="Warszawa"></p>
+            <p><label for="country">Country:</label><input type="text" id="country" name="country" value="Poland">
+			</p>
+			
+			
+			
+            <p><label for="occupation">Occupation:</label><input type="text" id="occupation" name="occupation" value="retail worker"></p>
+            <p class="group-p">
+				<label for="occupation-role">Occupation role:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
+				<select id="occupation-role" name="occupation-role">
+					<option value="manager">Manager</option>
+					<option value="employee">Employee</option>
+					<option value="other">Other</option>
+				</select></p>
+            <p class="register"><label for="register">Submit</label><input type="submit" name="register" value="register" ></p>
+         </form>
+      </p>
+	  
+	  
+
+<script src="bookstore-post.js"></script>	
+
+   <script>
+        // Sample data for autocomplete
+        const countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"];
+
+        // Function to filter autocomplete results
+        function filterAutocompleteResults(inputText) {
+            return countries.filter(country => country.toLowerCase().startsWith(inputText.toLowerCase()));
+        }
+
+        // Function to show autocomplete results
+        function showAutocompleteResults(inputText) {
+            const filteredResults = filterAutocompleteResults(inputText);
+            const autocompleteResultsDiv = document.getElementById('autocomplete-results');
+            autocompleteResultsDiv.innerHTML = '';
+
+            filteredResults.forEach(result => {
+                const autocompleteItem = document.createElement('div');
+                autocompleteItem.classList.add('autocomplete-item');
+                autocompleteItem.textContent = result;
+                autocompleteItem.addEventListener('click', () => {
+                    document.getElementById('autocomplete-input').value = result;
+                    autocompleteResultsDiv.innerHTML = '';
+                });
+                autocompleteResultsDiv.appendChild(autocompleteItem);
+            });
+
+            // Show/hide autocomplete dropdown based on input text
+            if (filteredResults.length > 0) {
+                autocompleteResultsDiv.style.display = 'block';
+            } else {
+                autocompleteResultsDiv.style.display = 'none';
+            }
+        }
+
+        // Add event listener to input field
+        document.getElementById('country').addEventListener('input', (event) => {
+            const inputText = event.target.value;
+            showAutocompleteResults(inputText);
+        });
+    </script>
+   </body>
+</html>
