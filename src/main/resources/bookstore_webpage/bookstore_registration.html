@@ -70,15 +70,17 @@
 		}
 		
 		#autocomplete {
+		  width: 210px;		 
+		  font-family: Arial, sans-serif;
+		  font-size: 13px;
 		  border: 1px dotted #ccc;
+		  border: 1px solid #ccc;		  
+		  border-radius: 3px;
 		  margin-left: 200px; 
-		  width: 200px;		  
 		  margin-top: -26px; 
-		  background-color: white; /* Add this line */
-		  padding: 10px;	
-		  border: 1px solid #ccc;
-		  border-radius: 3px;	
-		  position: absolute; /* Add this line */
+		  background-color: white; /* will not be transparent */
+		  padding: 5px;	
+		  position: absolute;
 		  z-index: 10;
 		}
 		#autocomplete ul {
@@ -96,11 +98,6 @@
       </style>
    </head>
     <body>
-	
-
-
-	<br><br><br><br><br><br>
-	
       <div class="registration-container">
          <h2 style="text-align: center">Customer Registration Form</h2>
          <form id="form" class="form" method="post">
@@ -120,8 +117,8 @@
             <p><label for="state">State:</label><input type="text" id="state" name="state" value="Mazowieckie"></p>
             <p><label for="zip-code">Zip Code:</label><input type="text" id="zip-code" name="zip-code" value="02-495"></p>
             <p><label for="city">City:</label><input type="text" id="city" name="city" value="Warszawa"></p>
-            <p><label for="country">Country:</label><input type="text" id="country" name="country" value="Poland" onKeyUp="showResults(this.value)"></p> 
-				<div id="autocomplete" hidden></div>
+            <p><label for="country">Country:</label><input type="text" id="country" name="country" value="Poland" onKeyUp="showCountries(this.value)"></p> 
+			<div id="autocomplete" hidden></div>
 			<p><label for="occupation">Occupation:</label><input type="text" id="occupation" name="occupation" value="retail worker"></p>
             <p class="group-p">
 				<label for="occupation-role">Occupation role:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
