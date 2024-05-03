@@ -20,18 +20,11 @@ public class PageLoginSteps {
     private String basePath;
     private PageLogin pageLogin;
 
-
-    @Before(value = "@GUI")
-    public void setupGUI() throws IOException {
-        Properties properties = new Properties();
-        properties.load(new FileReader("src\\main\\resources\\config.properties"));
-        basePath = properties.getProperty("GUI_PATH");
-        System.setProperty("webdriver.chrome.driver","C:\\chromedriver\\chromedriver123.exe");
-        webDriver = new ChromeDriver();
-    }
-
     @Given("I open a login webpage")
     public void openWebPage() {
+        webDriver = CommonConfig.webDriver;
+        basePath = CommonConfig.basePath;
+
         pageLogin = new PageLogin(webDriver);
         webDriver.get(basePath + pageLogin.getPageName());
     }
