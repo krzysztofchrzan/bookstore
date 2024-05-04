@@ -101,25 +101,25 @@
       <div class="registration-container">
          <h2 style="text-align: center">Customer Registration Form</h2>
          <form id="form" class="form" method="post">
-			<p><label for="first-name">First Name:</label><input type="text" id="first-name" name="first-name" value="Jan" required></p>
-            <p><label for="last-name">Last Name:</label><input type="text" id="last-name" name="last_name" value="Kowalski" required></p>			
-            <p><label for="email">Email Address:</label><input type="email" id="email" name="email" value="jan.kowalski@test.com" ></p>
-            <p><label for="phone-number">Phone Number:</label><input type="text" id="phone-number" name="phone-number" value="513999456"></p>
-			<p><label for="date-of-birth">Date of Birth:</label><input type="date" id="date-of-birth" name="date-of-birth" value="1983-08-23"></p>
+			<p><label for="first-name">First Name:</label><input type="text" id="first-name" name="first-name" required></p>
+            <p><label for="last-name">Last Name:</label><input type="text" id="last-name" name="last_name" required></p>			
+            <p><label for="email">Email Address:</label><input type="email" id="email" name="email" ></p>
+            <p><label for="phone-number">Phone Number:</label><input type="text" id="phone-number" name="phone-number"></p>
+			<p><label for="date-of-birth">Date of Birth:</label><input type="date" id="date-of-birth" name="date-of-birth"></p>
 			<p class="group-p" id="gender">
 				<label>Gender:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
 				<label class="group-p-items" for="gender-male">Male</label>
-				<input class="group-p-items" type="radio" name="gender" value="male" id="gender-male"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input class="group-p-items" type="radio" name="gender" id="gender-male"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<label class="group-p-items" for="gender-female">Female</label>
-				<input class="group-p-items" type="radio" name="gender" value="female" id="gender-female" checked/>
+				<input class="group-p-items" type="radio" name="gender" id="gender-female" checked/>
 			</p>
-            <p><label for="address-line">Address Line:</label><input type="text" id="address-line" name="address-line" value="ul.Obrońców Helu 2/41"></p>
-            <p><label for="state">State:</label><input type="text" id="state" name="state" value="Mazowieckie"></p>
-            <p><label for="zip-code">Zip Code:</label><input type="text" id="zip-code" name="zip-code" value="02-495"></p>
-            <p><label for="city">City:</label><input type="text" id="city" name="city" value="Warszawa"></p>
-            <p><label for="country">Country:</label><input type="text" id="country" name="country" value="Poland" onKeyUp="showCountries(this.value)"></p> 
+            <p><label for="address-line">Address Line:</label><input type="text" id="address-line" name="address-line"></p>
+            <p><label for="state">State:</label><input type="text" id="state" name="state"></p>
+            <p><label for="zip-code">Zip Code:</label><input type="text" id="zip-code" name="zip-code"></p>
+            <p><label for="city">City:</label><input type="text" id="city" name="city"></p>
+            <p><label for="country">Country:</label><input type="text" id="country" name="country" onKeyUp="showCountries(this.value)"></p> 
 			<div id="autocomplete" hidden></div>
-			<p><label for="occupation">Occupation:</label><input type="text" id="occupation" name="occupation" value="retail worker"></p>
+			<p><label for="occupation">Occupation:</label><input type="text" id="occupation" name="occupation"></p>
             <p class="group-p">
 				<label for="occupation-role">Occupation role:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
 				<select id="occupation-role" name="occupation-role">

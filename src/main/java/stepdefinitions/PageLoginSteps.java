@@ -45,11 +45,4 @@ public class PageLoginSteps {
     public void clickLogin(){
         pageLogin.clickSubmit();
     }
-
-    @After(value = "@GUI")
-    public void tearDown() throws InterruptedException {
-        Thread.sleep(3000);
-        webDriver.quit();
-    }
-
 }

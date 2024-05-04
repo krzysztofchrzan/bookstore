@@ -18,7 +18,7 @@ public class CommonConfig {
         Properties properties = new Properties();
         properties.load(new FileReader("src\\main\\resources\\config.properties"));
         basePath = properties.getProperty("GUI_PATH");
-        System.setProperty("webdriver.chrome.driver","C:\\chromedriver\\chromedriver123.exe");
+        System.setProperty("webdriver.chrome.driver", properties.getProperty("CHROMEDRIVER"));
         webDriver = new ChromeDriver();
     }
 
