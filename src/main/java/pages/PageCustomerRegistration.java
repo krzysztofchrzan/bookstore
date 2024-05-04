@@ -3,7 +3,10 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 public class PageCustomerRegistration {
     private final WebDriver webDriver;
@@ -79,6 +82,17 @@ public class PageCustomerRegistration {
 
     public void enterCountry(String countryValue) {
         webDriver.findElement(country).sendKeys(countryValue);
+
+        WebElement ulElement = webDriver.findElement(By.xpath("//div[@id='autocomplete']//ul"));
+        List<WebElement> liElements = ulElement.findElements(By.tagName("li"));
+
+        WebElement elementCountry = null;
+        for (WebElement element : liElements) {
+            if (element.getText().equalsIgnoreCase(countryValue)) elementCountry = element;
+        }
+
+        Actions actions = new Actions(webDriver);
+        actions.moveToElement(elementCountry).click().perform();
     }
 
     public void enterOccupation(String occupationValue) {

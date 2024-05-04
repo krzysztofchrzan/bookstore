@@ -1,27 +1,17 @@
 package stepdefinitions;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pages.PageCustomerRegistration;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Properties;
-
 public class PageCustomerRegistrationSteps {
-    private WebDriver webDriver;
-    private String basePath;
     private PageCustomerRegistration pageCustomerRegistration;
-
 
     @Given("I open a Customer Registration form")
     public void i_open_a_customer_registration_form() {
-        webDriver = CommonConfig.webDriver;
-        basePath = CommonConfig.basePath;
+        WebDriver webDriver = CommonConfig.webDriver;
+        String basePath = CommonConfig.basePath;
 
         pageCustomerRegistration = new PageCustomerRegistration(webDriver);
         webDriver.get(basePath + pageCustomerRegistration.getPageName());
@@ -96,10 +86,4 @@ public class PageCustomerRegistrationSteps {
     public void on_customer_registration_form_i_choose_register() {
         pageCustomerRegistration.submitRegister();
     }
-
-//    public void tearDown() throws InterruptedException {
-//        Thread.sleep(3000);
-//        webDriver.quit();
-//    }
-
 }

@@ -23,8 +23,9 @@ Feature: Bookstore webpage verification
     And On Customer Registration Form I enter state "Mazowieckie"
     And On Customer Registration Form I enter zip code "02-495"
     And On Customer Registration Form I enter city "Warszawa"
-    And On Customer Registration Form I enter country "Poland"
+    And On Customer Registration Form I enter country "Dominica"
     And On Customer Registration Form I enter occupation "Automation Tester"
     And On Customer Registration Form I choose occupation role "Employee"
     And On Customer Registration Form I click register
 
+    #TODO: Javascript executor
