@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Customer Registration Form</title>
-      <style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration Form</title>
+    <style>
         body {
 			font-family: Arial, sans-serif;
 			background-color: #f2f2f2;
@@ -95,45 +95,48 @@
 		  background: #eee;
 		}
 		
-      </style>
-   </head>
-    <body>
-      <div class="registration-container">
-         <h2 style="text-align: center">Customer Registration Form</h2>
-         <form id="form" class="form" method="post">
-			<p><label for="first-name">First Name:</label><input type="text" id="first-name" name="first-name" required></p>
-            <p><label for="last-name">Last Name:</label><input type="text" id="last-name" name="last_name" required></p>			
-            <p><label for="email">Email Address:</label><input type="email" id="email" name="email" ></p>
-            <p><label for="phone-number">Phone Number:</label><input type="text" id="phone-number" name="phone-number"></p>
-			<p><label for="date-of-birth">Date of Birth:</label><input type="date" id="date-of-birth" name="date-of-birth"></p>
-			<p class="group-p" id="gender">
-				<label>Gender:</label>
-				<label class="group-p-items" for="gender-male">Male</label>
-				<input class="group-p-items" type="radio" name="gender" id="gender-male"/>
-				<label class="group-p-items" for="gender-female">Female</label>
-				<input class="group-p-items" type="radio" name="gender" id="gender-female" checked/>
-			</p>
-            <p><label for="address-line">Address Line:</label><input type="text" id="address-line" name="address-line"></p>
-            <p><label for="state">State:</label><input type="text" id="state" name="state"></p>
-            <p><label for="zip-code">Zip Code:</label><input type="text" id="zip-code" name="zip-code"></p>
-            <p><label for="city">City:</label><input type="text" id="city" name="city"></p>
-            <p><label for="country">Country:</label><input type="text" id="country" name="country" onKeyUp="showCountries(this.value)"></p> 
-			<div id="autocomplete" hidden></div>
-			<p><label for="occupation">Occupation:</label><input type="text" id="occupation" name="occupation"></p>
-            <p class="group-p">
-				<label for="occupation-role">Occupation role:</label>
-				<select id="occupation-role" name="occupation-role">
-					<option value="manager">Manager</option>
-					<option value="employee">Employee</option>
-					<option value="other">Other</option>
-				</select></p>
-            <p class="register"><label for="register">Submit</label><input type="submit" id="register" name="register" value="register" ></p>
-         </form>
-      </div>
 
+    </style>
+</head>
+<body>
+<div class="registration-container">
+    <h2 style="text-align: center">Customer Registration Form</h2>
+    <form id="form" class="form" method="post">
+        <p><label for="first-name">First Name:</label><input type="text" id="first-name" name="first-name" required></p>
+        <p><label for="last-name">Last Name:</label><input type="text" id="last-name" name="last_name" required></p>
+        <p><label for="email">Email Address:</label><input type="email" id="email" name="email"></p>
+        <p><label for="phone-number">Phone Number:</label><input type="text" id="phone-number" name="phone-number"></p>
+        <p><label for="date-of-birth">Date of Birth:</label><input type="date" id="date-of-birth" name="date-of-birth">
+        </p>
+        <p class="group-p" id="gender">
+            <label>Gender:</label>
+            <label class="group-p-items" for="gender-male">Male</label>
+            <input class="group-p-items" type="radio" name="gender" id="gender-male"/>
+            <label class="group-p-items" for="gender-female">Female</label>
+            <input class="group-p-items" type="radio" name="gender" id="gender-female" checked/>
+        </p>
+        <p><label for="address-line">Address Line:</label><input type="text" id="address-line" name="address-line"></p>
+        <p><label for="state">State:</label><input type="text" id="state" name="state"></p>
+        <p><label for="zip-code">Zip Code:</label><input type="text" id="zip-code" name="zip-code"></p>
+        <p><label for="city">City:</label><input type="text" id="city" name="city"></p>
+        <p><label for="country">Country:</label><input type="text" id="country" name="country"
+                                                       onKeyUp="showCountries(this.value)"></p>
+        <div id="autocomplete" hidden></div>
+        <p><label for="occupation">Occupation:</label><input type="text" id="occupation" name="occupation"></p>
+        <p class="group-p">
+            <label for="occupation-role">Occupation role:</label>
+            <select id="occupation-role" name="occupation-role">
+                <option value="manager">Manager</option>
+                <option value="employee">Employee</option>
+                <option value="other">Other</option>
+            </select></p>
+        <p class="register"><label for="register">Submit</label><input type="submit" id="register" name="register"
+                                                                       value="register"></p>
+    </form>
+</div>
 
-<script src="bookstore-autocomplete.js"></script>	
-<script src="bookstore-post.js"></script>	
+<script src="bookstore-autocomplete.js"></script>
+<script src="bookstore-post.js"></script>
 
 </body>
 </html>

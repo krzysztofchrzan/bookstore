@@ -1,7 +1,6 @@
-
+@GUI
 Feature: Bookstore webpage verification
 
-  @GUI
   Scenario: User log in verification
     Given I open a login webpage
     Then Page title should be "Bookstore Login Page"
@@ -9,7 +8,6 @@ Feature: Bookstore webpage verification
     When I click submit
     Then Page title should be "Customer Registration Form"
 
-  @GUI
   Scenario: Customer registration form test
     Given I open a Customer Registration form
     # TODO: common Then Page title should be "Customer Registration Form"
