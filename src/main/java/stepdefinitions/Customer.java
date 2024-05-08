@@ -1,4 +1,4 @@
-package api;
+package stepdefinitions;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
@@ -16,10 +16,8 @@ import java.util.*;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 
 public class Customer {
@@ -80,15 +78,14 @@ public class Customer {
 
     @Then("I verify that response has empty list")
     public void responseShouldHaveEmptyList() {
-        Assertions.assertEquals("[]", response.getBody().asString());
+        Assert.assertEquals("[]", response.getBody().asString());
     }
 
-    @Tag("status check")
-    @DisplayName("Displaying name of status method")
+
     @Then("I verify that response has status {string}")
     public void verifyResponseStatus(String statusExpected) {
         int statusIntExpected = Integer.parseInt(statusExpected);
-        Assertions.assertEquals(
+        Assert.assertEquals(
                 statusIntExpected,
                 response.statusCode(),
                 "Should return status: " + statusIntExpected + " but it returned: " + response.statusCode()
@@ -98,11 +95,11 @@ public class Customer {
     @Then("I verify that response has records")
     public void i_verify_that_response_has_records(DataTable dataTable) {
         Map<String, String> map = dataTable.asMaps(String.class, String.class).get(0);
-        Assertions.assertAll(
-                () -> Assertions.assertEquals(map.get("name"), response.jsonPath().get("name[0]")),
-                () -> Assertions.assertEquals(map.get("surname"), response.jsonPath().get("surname[0]")),
-                () -> Assertions.assertEquals(map.get("age"), response.jsonPath().get("age[0]"))
-        );
+        SoftAssert softAssert = new SoftAssert();
+        Assert.assertEquals(map.get("name"), response.jsonPath().get("name[0]"));
+        Assert.assertEquals(map.get("surname"), response.jsonPath().get("surname[0]"));
+        Assert.assertEquals(map.get("age"), response.jsonPath().get("age[0]"));
+        softAssert.assertAll();
     }
 
     // TODO create scenario
