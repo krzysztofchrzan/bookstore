@@ -1,9 +1,10 @@
-package stepdefinitions;
+package stepdefinitions.gui;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pages.PageCustomerRegistration;
+import stepdefinitions.CommonConfig;
 
 public class PageCustomerRegistrationSteps {
     private PageCustomerRegistration pageCustomerRegistration;

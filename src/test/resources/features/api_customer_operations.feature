@@ -1,5 +1,6 @@
 @API
 Feature: Customer registration in a REST API Bookstore service
+# TODO: Create a token in beforeAll method
 
   Scenario Outline: Perform POST operation - register a customer
     When I make a GET request to customer with key "surname" and value "<surname>"

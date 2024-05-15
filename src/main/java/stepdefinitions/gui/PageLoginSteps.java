@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.gui;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pages.PageLogin;
+import stepdefinitions.CommonConfig;
 
 
 public class PageLoginSteps {
