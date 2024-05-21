@@ -28,3 +28,5 @@ Feature: Customer registration in a REST API Bookstore service
     Then I verify that response has status "201"
 
     # TODO: create PUT scenario
+    # TODO: create DELETE scenario
+    # TODO: create a database verification scenario
