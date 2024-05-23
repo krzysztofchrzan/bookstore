@@ -16,6 +16,8 @@
         <selenium.version>3.141.59</selenium.version>
         <chromedriver.version>3.141.59</chromedriver.version>
         <testng.version>7.4.0</testng.version>
+        <allure.version>2.10.0</allure.version>
+        <allure.cucumber.version>2.18.0</allure.cucumber.version>
     </properties>
 
     <dependencies>
@@ -39,7 +41,6 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
-<!--             <scope>test</scope>  -->
         </dependency>
 
         <!-- Rest Assured dependency -->
@@ -71,6 +72,22 @@
             <version>${chromedriver.version}</version>
         </dependency>
 
+        <!-- Allure Cucumber dependency -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber7-jvm</artifactId>
+            <version>${allure.cucumber.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.cucumber</groupId>
+                    <artifactId>gherkin</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.cucumber</groupId>
+                    <artifactId>messages</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
     </dependencies>
 
 
@@ -88,10 +105,11 @@
                 </configuration>
             </plugin>
 
+            <!-- Allure Maven Plugin -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
-                <version>2.10.0</version>
+                <version>${allure.version}</version>
                 <executions>
                     <execution>
                         <id>allure-report</id>
@@ -102,7 +120,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 
@@ -111,9 +128,15 @@
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
-                <version>2.10.0</version>
+                <version>${allure.version}</version>
             </plugin>
         </plugins>
     </reporting>
 
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
 </project>
