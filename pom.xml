@@ -113,7 +113,7 @@
                 <executions>
                     <execution>
                         <id>allure-report</id>
-                        <phase>verify</phase>
+                        <phase>test</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>
