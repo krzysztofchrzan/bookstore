@@ -113,9 +113,9 @@
                 <executions>
                     <execution>
                         <id>allure-report</id>
-                        <phase>test</phase>
+                        <phase>verify</phase>
                         <goals>
-                            <goal>serve</goal>
+                            <goal>report</goal>
                         </goals>
                     </execution>
                 </executions>
