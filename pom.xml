@@ -106,12 +106,17 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
-<!--                    <properties>-->
-<!--                        <property>-->
-<!--                            <name>listener</name>-->
-<!--                            <value>io.qameta.allure.testng.AllureTestNg</value>-->
-<!--                        </property>-->
-<!--                    </properties>-->
+
+                        <!-- Configure Surefire to use the appropriate test listener -->
+<!--                        <properties>-->
+<!--                            <property>-->
+<!--                                <name>listener</name>-->
+<!--                                <value>io.qameta.allure.testng.AllureTestNg</value>-->
+<!--                            </property>-->
+<!--                        </properties>-->
+                        <!-- Specify the output directory for test results -->
+                        <reportsDirectory>${project.build.directory}/allure-results</reportsDirectory>
+
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
