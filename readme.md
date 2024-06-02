@@ -38,20 +38,8 @@ GENERATE OPEN LOCALLY IN INTELLIJ
 d:\programy\allure-2.29.0\bin\allure --version && D: && cd D:\programy\intellij\projekty\bookstore && d:\programy\allure-2.29.0\bin\allure generate "d:\programy\intellij\projekty\bookstore\target\allure-results" -o "D:\programy\intellij\projekty\bookstore\target\allure-reports" --clean && d:\programy\allure-2.29.0\bin\allure open "D:\programy\intellij\projekty\bookstore\target\allure-reports"
 
 
-OPEN FROM JENKINS FOLDER:
-d:\programy\allure-2.29.0\bin\allure generate target/allure-results -o allure-report
-allure open target/allure-report
+GENERATE OPEN LOCALLY IN JENKINS FOLDER:
+d:\programy\allure-2.29.0\bin\allure --version && D: && cd "D:\\programy\\jenkins-home\\workspace\\Bookstore_Pipeline" && d:\programy\allure-2.29.0\bin\allure generate "D:\\programy\\jenkins-home\\workspace\\Bookstore_Pipeline\\target\\allure-results" -o "D:\\programy\\jenkins-home\\workspace\\Bookstore_Pipeline\\target\\allure-reports" --clean && d:\programy\allure-2.29.0\bin\allure open "D:\\programy\\jenkins-home\\workspace\\Bookstore_Pipeline\\target\\allure-reports"
 
-
-allure generate "D:\\programy\\jenkins-home\\workspace\\Bookstore Pipeline\\target\\allure-results" -o "D:\\programy\\jenkins-home\\workspace\\Bookstore Pipeline\\allure-report"
-allure open "D:\\programy\\jenkins-home\\workspace\\Bookstore Pipeline\\target\\allure-results"
-allure serve "D:\\programy\\jenkins-home\\workspace\\Bookstore Pipeline\\target\\allure-results"
-
-
-d:\programy\allure-2.29.0\bin\allure generate "d:\programy\jenkins-home\workspace\Bookstore Pipeline\target\allure-results" -o "d:\programy\jenkins-home\workspace\Bookstore Pipeline\target\allure-reports" --clean
-d:\programy\allure-2.29.0\bin\allure generate "d:\programy\intellij\projekty\bookstore\target\allure-results" -o "d:\programy\intellij\projekty\bookstore\target\allure-reports" --clean
-
-d:\programy\allure-2.29.0\bin\allure open D:\programy\intellij\projekty\bookstore\target\allure-reports
-d:\programy\allure-2.29.0\bin\allure open "d:\programy\jenkins-home\workspace\Bookstore Pipeline\target\allure-reports"
 ------------------------------------------
 
