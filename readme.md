@@ -25,31 +25,21 @@ npx json-server db.json
 
 INSTALL ALLURE-REPORTS
 ------------------------------------------
-Download Allure Commandline:
+DOWNLOAD ALLURE AND EXTRACT ZIP:
 https://github.com/allure-framework/allure2/releases
-
-Extract the downloaded ZIP file to for ex:
 D:\programy\allure-2.29.0\bin
 
-Add Allure to Your System's PATH
-"Environment Variables".
-In the "System variables" section, find and select the Path variable,
-then click "Edit".
-Click "New" and add the path to the bin directory 
-inside your extracted Allure directory, e.g., D:\programy\allure-2.29.0\bin
+ADD ALLURE TO YOUR SYSTEM'S PATH
+1.Computer -> RMB -> Settings -> Advanced System Settings -> Environment Variables
+2.System variables section -> Path ("Edit")
+3."New" and add the path to the bin directory "D:\programy\allure-2.29.0\bin"
 
-GENERATE REPORTS MANUALY
-d:\programy\allure-2.29.0\bin\allure generate "d:\programy\jenkins-home\workspace\Bookstore Pipeline\target\allure-results" -o "d:\programy\jenkins-home\workspace\Bookstore Pipeline\target\allure-reports" --clean
-d:\programy\allure-2.29.0\bin\allure generate "d:\programy\intellij\projekty\bookstore\target\allure-results" -o "d:\programy\intellij\projekty\bookstore\target\allure-reports" --clean
+GENERATE OPEN LOCALLY IN INTELLIJ
+d:\programy\allure-2.29.0\bin\allure --version && D: && cd D:\programy\intellij\projekty\bookstore && d:\programy\allure-2.29.0\bin\allure generate "d:\programy\intellij\projekty\bookstore\target\allure-results" -o "D:\programy\intellij\projekty\bookstore\target\allure-reports" --clean && d:\programy\allure-2.29.0\bin\allure open "D:\programy\intellij\projekty\bookstore\target\allure-reports"
 
-OPEN LOCALLY
-allure --version
-D:
-cd D:\programy\intellij\projekty\bookstore
-allure serve target\allure-results
-allure open D:\programy\intellij\projekty\bookstore\target\allure-reports
+
 OPEN FROM JENKINS FOLDER:
-allure generate target/allure-results -o allure-report
+d:\programy\allure-2.29.0\bin\allure generate target/allure-results -o allure-report
 allure open target/allure-report
 
 

@@ -17,7 +17,7 @@
         <chromedriver.version>3.141.59</chromedriver.version>
         <testng.version>7.4.0</testng.version>
         <allure.version>2.10.0</allure.version>
-        <allure.cucumber.version>2.19.0</allure.cucumber.version>
+        <allure.cucumber.version>2.18.0</allure.cucumber.version>
     </properties>
 
     <dependencies>
