@@ -5,6 +5,11 @@ INSTALL JENKINS
 Dashboard -> Manage Jenkins -> System -> Home directory
 d:\programy\jenkins-home
 
+Create pipeline
+
+Dashboard -> Bookstore_Pipeline -> Configuration -> GitHub directory
+project https://github.com/krzysztofchrzan/bookstore/
+
 C:\Program Files\Jenkins
 autostart_jenkins.bat
 <pre>
@@ -99,7 +104,71 @@ d:\programy\allure-2.29.0\bin\allure --version && D: && cd D:\programy\intellij\
 GENERATE OPEN LOCALLY IN JENKINS FOLDER:
 d:\programy\allure-2.29.0\bin\allure --version && D: && cd "D:\\programy\\jenkins-home\\workspace\\Bookstore_Pipeline" && d:\programy\allure-2.29.0\bin\allure generate "D:\\programy\\jenkins-home\\workspace\\Bookstore_Pipeline\\target\\allure-results" -o "D:\\programy\\jenkins-home\\workspace\\Bookstore_Pipeline\\target\\allure-reports" --clean && d:\programy\allure-2.29.0\bin\allure open "D:\\programy\\jenkins-home\\workspace\\Bookstore_Pipeline\\target\\allure-reports"
 
-ONLY OPEN FROM JENKINS MANUALLY
+ONLY OPEN FROM JENKINS MANUALLY:
 d:\programy\allure-2.29.0\bin\allure --version && D: && cd "D:\\programy\\jenkins-home\\workspace\\Bookstore_Pipeline" && d:\programy\allure-2.29.0\bin\allure open "D:\\programy\\jenkins-home\\workspace\\Bookstore_Pipeline\\target\\allure-reports"
+
+INSTALL DATABASE SQLITE
 ------------------------------------------
+https://www.sqlite.org/download.html
+sqlite-tools-win-x64-3460000.zip
+
+extract into d:\programy\sqlite-tools-win-x64-3460000\
+cmd d:
+cd d:\programy\sqlite-tools-win-x64-3460000\
+sqlite3
+
+.open customers.db
+
+CREATE TABLE customer (
+id INTEGER PRIMARY KEY,
+firstname TEXT,
+lastname TEXT,
+email TEXT,
+phoneNumber TEXT,
+dateOfBirth DATE,
+gender TEXT,
+addressLine TEXT,
+state TEXT,
+zipCode TEXT,
+city TEXT,
+country TEXT,
+occupation TEXT,
+occupationRole TEXT
+);
+
+INSERT INTO customer (
+id,
+firstname,
+lastname,
+email,
+phoneNumber,
+dateOfBirth,
+gender,
+addressLine,
+state,
+zipCode,
+city,
+country,
+occupation,
+occupationRole
+) VALUES (
+1,
+'Jan',
+'Kowalski',
+'jk@gfx.com',
+'534-345-234',
+'1987-02-21',
+'male',
+'Obrońców Helu 2/43',
+'Mazowieckie',
+'02-495',
+'Warszawa',
+'Poland',
+'QA Engineer',
+'Employee'
+);
+
+.exit
+
+DB Browser for SQLite
 
