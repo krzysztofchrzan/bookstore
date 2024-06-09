@@ -29,8 +29,10 @@ Feature: Customer registration in a REST API Bookstore service
 
     # TODO: create PUT scenario
     # TODO: create DELETE scenario
-    # TODO: create a database verification scenario
+
 
   @IGNORE
   Scenario: Database customer record verification
     When I make connection to the database
+    Then I verify that in Customer table there is 1 record with conditions
+    # TODO: continue a database verification scenario
