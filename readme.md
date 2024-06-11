@@ -172,3 +172,11 @@ occupationRole
 
 DB Browser for SQLite
 
+
+Adding the JAR to IntelliJ IDEA Classpath
+1.Intellij -> File -> Project Structure.
+2.Go to Modules under Project Settings.
+3.Select your module, then go to the Dependencies tab.
+4.Click the + icon (Add) > JARs or directories.
+5.Select the SQLite JAR:  Navigate to D:\programy\sqlite-tools-win-x64-3460000 and select sqlite-jdbc-3.46.0.0.jar.
+6.Apply and OK
